@@ -1,2 +1,5 @@
-pylint
 pytest
+pylint
+jupyter
+pytest-cov
+click
