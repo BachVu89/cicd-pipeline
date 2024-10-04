@@ -1,0 +1,1 @@
+az webapp up -n flaskapp1803 --resource-group Azuredevops

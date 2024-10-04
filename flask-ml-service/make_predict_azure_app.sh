@@ -25,5 +25,5 @@ curl -d '{
    }
 }'\
      -H "Content-Type: application/json" \
-     -X POST https://cicdpipeline.azurewebsites.net:$PORT/predict 
-     #your application name <yourappname>goes here
+     -X POST https://flaskapp1803.azurewebsites.net:$PORT/predict 
+     # TODO: Replace the <yourappname> with your application name 
