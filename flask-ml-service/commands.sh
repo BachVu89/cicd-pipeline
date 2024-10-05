@@ -1,1 +1,0 @@
-az webapp up -n udacity2 --resource-group Azuredevops
