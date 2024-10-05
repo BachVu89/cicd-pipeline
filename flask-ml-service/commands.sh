@@ -1,1 +1,1 @@
-az webapp up -n flaskapp1803 --resource-group Azuredevops
+az webapp up -n udacity2 --resource-group Azuredevops
