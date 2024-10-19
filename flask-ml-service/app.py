@@ -3,7 +3,7 @@ from flask.logging import create_logger
 import logging
 
 import pandas as pd
-import joblib
+from sklearn.externals import joblib
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
@@ -55,7 +55,7 @@ def predict():
     """
 
     try:
-        clf = joblib.load("/Housing_price_model/boston_housing_predict.joblib")
+        clf = joblib.load("GradientBoostingRegressor.joblib")
     except:
         LOG.info("JSON payload: %s json_payload")
         return "Model not loaded"
