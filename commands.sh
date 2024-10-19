@@ -3,4 +3,4 @@ cd cicd-pipeline
 make setup
 source .cicd-pipeline
 make all
-az webapp up -n Udacity -g Azuredevops --sku FREE
+az webapp up -n udacity2 -g Azuredevops --sku FREE
