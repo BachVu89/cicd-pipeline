@@ -39,6 +39,9 @@ Expected should be like the following after done your work:
 [![Python application test with Github Actions](https://github.com/BachVu89/cicd-pipeline/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/BachVu89/cicd-pipeline/actions/workflows/pythonapp.yml)
 4. Azure Azure App Service
 ![App service](./doc/app-service.png)
-5. Successful run of the project in Azure Pipelines
+5. Prediction
+
+    ![Prediction](./doc/prediction.png)
+6. Successful run of the project in Azure Pipelines
 
 ### Video  link
