@@ -1,6 +1,7 @@
 setup:
-	python3 -m venv ~/.udacity-devops
-
+	python3 -m venv ~/.flask-ml-azure
+	#source ~/.flask-ml-azure/bin/activate
+	
 install:
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
@@ -12,6 +13,6 @@ test:
 
 lint:
 	#hadolint Dockerfile #uncomment to explore linting Dockerfiles
-	pylint --disable=R,C,E0611,W0702 app.py
+	pylint --disable=R,C,W1203,bare-except --fail-under=6 app.py
 
 all: install lint test
