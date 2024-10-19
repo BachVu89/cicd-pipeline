@@ -21,19 +21,42 @@ def scale(payload):
 
 @app.route("/")
 def home():
-    html = "<h3>Sklearn Prediction Home</h3>"
+    html = "<h3>Sklearn Prediction Home, Welcome to service</h3>"
     return html.format(format)
 
 # TO DO:  Log out the prediction value
 @app.route("/predict", methods=['POST'])
 def predict():
-    # Performs an sklearn prediction
+    """Performs an sklearn prediction
+
+    input looks like:
+            {
+    "CHAS":{
+      "0":0
+    },
+    "RM":{
+      "0":6.575
+    },
+    "TAX":{
+      "0":296.0
+    },
+    "PTRATIO":{
+       "0":15.3
+    },
+    "B":{
+       "0":396.9
+    },
+    "LSTAT":{
+       "0":4.98
+    }
+
+    result looks like:
+    { "prediction": [ 20.35373177134412 ] }
+
+    """
 
     try:
-        # Load pretrained model as clf. Try any one model. 
-        # clf = joblib.load("./Housing_price_model/LinearRegression.joblib")
-        # clf = joblib.load("./Housing_price_model/StochasticGradientDescent.joblib")
-        clf = joblib.load("./Housing_price_model/GradientBoostingRegressor.joblib")
+        clf = joblib.load("./House_price_model/GradientBoostingRegressor.joblib")
     except:
         LOG.info("JSON payload: %s json_payload")
         return "Model not loaded"
