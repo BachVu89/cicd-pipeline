@@ -1,7 +1,7 @@
 #!/bin/bash
 
 APPNAME=udacity2
-RG=udacity2_rg
+RG=Azuredevops
 SP=udacity2_sp
 
 #you can see a list of runtimes using 
@@ -13,7 +13,7 @@ az group create --location eastus --name $RG
 
 # Create an App Service plan in FREE tier if you need it.
 echo "Going to Create Azure Webapp using free tier: " $azWebappName
-az webapp up --name $APPNAME --resource-group $APPNAME --sku FREE
+az webapp up --name $APPNAME --resource-group $RG --location eastus2
 
 echo "Azure Web App Created Successfully"
 
