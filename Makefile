@@ -1,5 +1,5 @@
 setup:
-	python3 -m venv .azuredevops2-using-microsoft-azure2
+	python3 -m venv .cicd-pipeline
 
 install:
 	pip install --upgrade pip &&\
