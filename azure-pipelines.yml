@@ -83,7 +83,7 @@ stages:
           - task: AzureRmWebAppDeployment@4
             inputs:
               ConnectionType: 'AzureRM'
-              azureSubscription: 'access'
+              azureSubscription: 'AzureRM'
               appType: 'webAppLinux'
               WebAppName: 'udacity2'
               packageForLinux: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
