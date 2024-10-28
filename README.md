@@ -1,48 +1,77 @@
-# Building a CI/CD Pipeline Project
+# Overview
 
-### Introduction
-In this project, you will build a Github repository from scratch and create a scaffolding that will assist you in performing both Continuous Integration and Continuous Delivery.
-- Plan: https://docs.google.com/spreadsheets/d/1v8YW58UcrGgWk1LJFVf2BQpbQ8MNIyjkWhs4Dx0aGq0/edit?usp=sharing
-- Trello: https://trello.com/invite/b/66ffa632decaab12b68420dd/ATTI33b7438a33a1b5a78fa89d7f219171daF463D6C8/azure-devops-project-management
+This project help you to know about deploy on azure , build CI/CD pipeline , test API app service , cloud shell.
+ ![alt text][Badge]
 
-### Getting Started
-1. Clone this repository
+## Project Plan
+<TODO: Project Plan
 
-2. Create your infrastructure as code
-
-3. Update this README to reflect how someone would use your code.
-
-## Architectural Diagram
-![Diagram](https://video.udacity-data.com/topher/2020/July/5f21ce4e_building-a-ci-cd-pipeline/building-a-ci-cd-pipeline.png)
-
-### Dependencies
-1. Create an [Azure Account](https://portal.azure.com) 
-2. Create an [Azure Devops](https://dev.azure.com/)
-3. Create a reposistory in your GitHub account 
-3. Create the Cloud-Based Development Environment: Launch an Azure Cloud Shell environment and create ssh-keys. Upload these keys to your GitHub account.
+* A link to a Trello board for the project
+https://trello.com/invite/b/66ffa632decaab12b68420dd/ATTI33b7438a33a1b5a78fa89d7f219171daF463D6C8/azure-devops-project-management
+* A link to a spreadsheet that includes the original and final project plan>
+https://docs.google.com/spreadsheets/d/1v8YW58UcrGgWk1LJFVf2BQpbQ8MNIyjkWhs4Dx0aGq0/edit?usp=sharing
 
 
-### Instructions
-#### Hello app
-1. Run a comment azure in cloud shell which will install, lint, and test code: <code>make all</code>.
-#### Flask ML Service
-1. Run pipeline in Azure Devops to deploy your web app.
-2. Make a prediction: <code>./make_predict_azure_app.sh</code>.
+## Instructions
 
-### Output
-Expected should be like the following after done your work:
-1. Clone your repository.
-![Clone repo](./doc/clone-reponsitory.png)
-2. The passing test after run <code>make all</code>.
-![Passing test](./doc/pass-test.png)
-3. GitHub actions badge
-[![Python application test with Github Actions](https://github.com/BachVu89/cicd-pipeline/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/BachVu89/cicd-pipeline/actions/workflows/pythonapp.yml)
-4. Azure Azure App Service
-![App service](./doc/app-service.png)
-5. Prediction
+<TODO:  
+* Architectural Diagram (Shows how key parts of the system work)>
+![alt text](./doc/image.png)
 
-    ![Prediction](./doc/prediction.png)
-6. Successful run of the project in Azure Pipelines
-![Pipeline](./doc/pipeline.png)
-### Video  link
+![alt text](<./doc/image copy.png>)
+
+<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
+
+* Project running on Azure App Service
+In order to run on Azure App service we clone the repo,navigate to the repo and after that we run `make setup`, then run 
+`source .cicd-pipeline/bin/activate` , after that run `make install` to install requirements for python.
+
+- Deploy app with Azure App Service  run : ` az webapp up -n udacity2 --resource-group Azuredevops --location eastus2`, result test with Azure App Service:
+![alt text](./doc/prediction.png)
+
+
+* Project cloned into Azure Cloud Shell
+create ssh key: 
+`ssh-keygen -t rsa.`
+
+after key is generated we get it in ./ssh folder 
+ enter till it done generate
+cd ./ssh => get public key by using `cat id_rsa.pub`
+copy and paste it into github account.
+after done added ssh key into github account 
+you easily to clone it self:
+![alt text](./doc/clone-reponsitory.png)
+
+* Passing tests that are displayed after running the `make all` command from the `Makefile`:
+![alt text](./doc/pass-test.png)
+
+* Output of a test run
+Enable git hub action by create a folder .github/workflows at a root level. then create a yaml file (pythonapp.yaml by default):
+![alt text](./doc/git%20action%20build%20success.png)
+
+* Running Azure App Service from Azure Pipelines automatic deployment
+![alt text](./doc/pipeline.png)
+* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
+The output should look similar to this:
+
+
+```bash
+udacity@Azure:~$ ./make_predict_azure_app.sh
+Port: 443
+{"prediction":[20.353731771344123]}
+```
+![alt text](./doc/prediction.png)
+
+## Enhancements
+
+<TODO: A short description of how to improve the project in the future>
+
+Change with different multi languages not only Python
+
+## Demo 
+
+<TODO: Add link Screencast on YouTube>
+
 https://youtu.be/Xbj_3Sku55E
+
+[Badge]: https://github.com/BachVu89/cicd-pipeline/actions/workflows/pythonapp.yml/badge.svg
